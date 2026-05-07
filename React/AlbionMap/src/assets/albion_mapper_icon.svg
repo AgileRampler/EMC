@@ -1,0 +1,59 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient Circle -->
+  <rect width="512" height="512" rx="128" fill="url(#gradient1)"/>
+  
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="gradient1" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    
+    <linearGradient id="gradient2" x1="256" y1="100" x2="256" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E0E7FF"/>
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Map Pin Icon -->
+  <g filter="url(#glow)">
+    <!-- Main Pin Shape -->
+    <path d="M256 120C211.817 120 176 155.817 176 200C176 244.183 256 392 256 392C256 392 336 244.183 336 200C336 155.817 300.183 120 256 120Z" 
+          fill="url(#gradient2)" 
+          stroke="#FFFFFF" 
+          stroke-width="8" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+    
+    <!-- Inner Circle -->
+    <circle cx="256" cy="200" r="32" fill="#7C3AED" opacity="0.9"/>
+    
+    <!-- Decorative Elements -->
+    <circle cx="256" cy="200" r="20" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="256" cy="200" r="10" fill="#2563EB"/>
+  </g>
+  
+  <!-- Decorative Map Lines -->
+  <g opacity="0.3">
+    <line x1="100" y1="150" x2="180" y2="150" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="8 8"/>
+    <line x1="332" y1="150" x2="412" y2="150" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="8 8"/>
+    <line x1="100" y1="250" x2="160" y2="250" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="8 8"/>
+    <line x1="352" y1="250" x2="412" y2="250" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="8 8"/>
+  </g>
+  
+  <!-- Connection Nodes -->
+  <g opacity="0.5">
+    <circle cx="140" cy="150" r="8" fill="#FFFFFF"/>
+    <circle cx="372" cy="150" r="8" fill="#FFFFFF"/>
+    <circle cx="140" cy="250" r="8" fill="#FFFFFF"/>
+    <circle cx="372" cy="250" r="8" fill="#FFFFFF"/>
+  </g>
+</svg>
