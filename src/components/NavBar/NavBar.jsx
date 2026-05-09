@@ -87,8 +87,8 @@ const navLinks = [
                  <nav className='  flex  flex-col gap-3 '>
     
                     {navLinks.map((item,i)=>(
-                        <div className=' relative font-semibold group text-lg w-fit  ' key={i}>{item.name}
-                        <span className='absolute -bottom-1 left-0 h-1  w-0  bg-blue-800 group-hover:w-full transition-all duration-300  '></span></div>
+                        <a href={item.path} className=' relative font-semibold group text-lg w-fit  ' key={i}>{item.name}
+                        <span className='absolute -bottom-1 left-0 h-1  w-0  bg-blue-800 group-hover:w-full transition-all duration-300  '></span></a>
                     ))}
     
                  </nav>
