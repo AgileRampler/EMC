@@ -702,7 +702,7 @@
     width: calc(var(--spacing) * 96);
   }
   .w-\[4-\%\] {
-    width: 4-%;
+    width: 40%;
   }
   .w-\[20\%\] {
     width: 20%;

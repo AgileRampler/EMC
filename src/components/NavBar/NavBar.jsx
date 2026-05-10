@@ -3,6 +3,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUsers,faBars,faXmark } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import "./navbar.css"
 
 
@@ -66,8 +67,8 @@ const navLinks = [
            
     
                  <div className=' hidden lg:flex gap-6'>
-                    <button className='bg-white p-3 rounded-2xl text-blue-600 font-bold shadow-mg hover:bg-gray-100  border cursor-pointer'> Login In</button>
-                    <button className='bg-blue-700 p-3 rounded-2xl text-white font-bold shadow-mg hover:bg-blue-500  cursor-pointer'>Get Started</button>
+                    <Link to="auth/" className='bg-white p-3 rounded-2xl text-blue-600 font-bold shadow-mg hover:bg-gray-100  border cursor-pointer'> Login In</Link>
+                    <Link to="aith/" className='bg-blue-700 p-3 rounded-2xl text-white font-bold shadow-mg hover:bg-blue-500  cursor-pointer'>Get Started</Link>
                  </div>
 
                                     {/* Mobile  */}

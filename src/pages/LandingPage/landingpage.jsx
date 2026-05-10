@@ -5,6 +5,7 @@ import NavBar from '../../components/NavBar/NavBar'
 import image from '../../assets/demox.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronUp, faChevronDown, faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
 /* ─────────────────────────────────────────────────────────────
    FAQItem — defined OUTSIDE the page component so it isn't
@@ -100,7 +101,7 @@ const LandingPage = () => {
   return (
     <>
       {/* ═══════════════════════════════════════════════════
-          HERO
+          Section
       ═══════════════════════════════════════════════════ */}
       <div id="home" className="relative min-h-screen bg-[#f8f9fc] overflow-hidden font-sans">
 
@@ -128,9 +129,9 @@ const LandingPage = () => {
             </p>
 
             <div className="flex flex-wrap gap-3 sm:gap-5 mt-8 sm:mt-10">
-              <button className="bg-blue-600 hover:bg-blue-700 transition-colors duration-200 text-white text-base sm:text-xl rounded-2xl px-6 py-3 sm:p-4 cursor-pointer">
+              <Link to="/auth" className="bg-blue-600 hover:bg-blue-700 transition-colors duration-200 text-white text-base sm:text-xl rounded-2xl px-6 py-3 sm:p-4 cursor-pointer">
                 Get Started Free 🡢
-              </button>
+              </Link>
               <button className="bg-gray-50 hover:bg-gray-200 transition-colors duration-200 border text-blue-700 text-base sm:text-xl rounded-2xl px-6 py-3 sm:p-4 font-semibold cursor-pointer">
                 Book a Demo
               </button>
@@ -163,16 +164,16 @@ const LandingPage = () => {
           <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl max-w-xl">
             Everything You Need to Manage Your Workforce
           </h2>
-          <p className="text-gray-600 font-medium max-w-lg text-sm sm:text-base">
+          <p className="text-gray-600 font-medium min-w-lg text-sm sm:text-base">
             Our platform helps you automate HR tasks, track performance, and build a productive team.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 px-5 sm:px-10 lg:px-16 mt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-5 px-5 sm:px-10 lg:px-20 mt-10">
           {products.map((item, i) => (
             <div
               key={i}
-              className={`bg-white rounded-2xl shadow-md p-5 flex items-start gap-4 ${item.hovercolor} transition-colors duration-200`}
+              className={`bg-white rounded-2xl shadow-md p-5 flex h-30  items-start gap-5 ${item.hovercolor} transition-colors duration-200`}
             >
               <div className={`${item.color} rounded-2xl p-4 text-xl shrink-0`}>{item.tag}</div>
               <div>
@@ -200,7 +201,7 @@ const LandingPage = () => {
           {pricingPlans.map((plan, i) => (
             <div
               key={i}
-              className={`relative rounded-2xl shadow-md flex flex-col w-full max-w-sm mx-auto lg:mx-0
+              className={` relative rounded-2xl shadow-md flex flex-col w-full max-w-sm mx-auto lg:mx-0
                           border-2 transition-all duration-200
                           ${plan.highlight
                             ? 'border-blue-700 shadow-blue-100 shadow-lg'
