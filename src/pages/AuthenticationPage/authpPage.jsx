@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUsers,faArrowLeftLong,faCircle, faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
+import { faUsers,faArrowLeftLong,faCircle, faArrowRightLong, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { Link, useLocation } from 'react-router-dom'
 import { faFacebook, faGithub, faGoogle, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
@@ -12,6 +12,10 @@ const location = useLocation()
   const[isLogin,setisLogin ] = useState(
       location.state?.mode === "register" ? false : true
   )
+
+  const [showLoginPassword, setShowLoginPassword] = useState(false)
+  const [showRegPassword, setShowRegPassword] = useState(false)
+  const [showRegConfirmPassword, setShowRegConfirmPassword] = useState(false)
 
   return (
     <> 
@@ -88,7 +92,13 @@ const location = useLocation()
               <form className=' flex  m-4  mb-3 justify-center flex-col gap-4 leading-relaxed '>
       
                  <input className='w-full p-4 bg-white rounded-2xl' type="text" placeholder='Email' />
-                <input className='w-full bg-white rounded-2xl p-4' type="text" placeholder='Password' />
+                
+                <div className='relative w-full'>
+                  <input className='w-full bg-white rounded-2xl p-4 pr-12' type={showLoginPassword ? "text" : "password"} placeholder='Password' />
+                  <button type="button" onClick={() => setShowLoginPassword(!showLoginPassword)} className='absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer'>
+                    <FontAwesomeIcon icon={showLoginPassword ? faEyeSlash : faEye} />
+                  </button>
+                </div>
               
                 </form>
       
@@ -98,10 +108,12 @@ const location = useLocation()
                   
                   
                 </div>
-                 <button className='mt-5 mx-4 lg:ms-20 w-[calc(100%-2rem)] lg:w-auto bg-blue-700 rounded-3xl hover:bg-blue-600 p-4 lg:mb-0 flex justify-center lg:justify-start cursor-pointer text-white text-l font-bold mb-10' >
-              Login  Account
-               <span><FontAwesomeIcon icon={faArrowRightLong} style={{color: "rgb(black)",}} /></span>
-              </button>
+                 <Link to="/dashboard">
+                   <button className='mt-5 mx-4 lg:ms-20 w-[calc(100%-2rem)] lg:w-auto bg-blue-700 rounded-3xl hover:bg-blue-600 p-4 lg:mb-0 flex justify-center lg:justify-start cursor-pointer text-white text-l font-bold gap-2 mb-10' >
+                Login  Account
+                 <span><FontAwesomeIcon icon={faArrowRightLong} style={{color: "rgb(black)",}} /></span>
+                </button>
+                 </Link>
            
              
           </div>
@@ -128,8 +140,20 @@ const location = useLocation()
 
                 
                  <input className='w-full p-3 bg-white rounded-2xl' type="text" placeholder='Email' />
-                <input className='w-full bg-white rounded-2xl p-3' type="text" placeholder='Password' />
-                      <input className='w-full bg-white rounded-2xl p-3' type="text" placeholder='Confirm Your Password' />
+
+                <div className='relative w-full'>
+                  <input className='w-full bg-white rounded-2xl p-3 pr-12' type={showRegPassword ? "text" : "password"} placeholder='Password' />
+                  <button type="button" onClick={() => setShowRegPassword(!showRegPassword)} className='absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer'>
+                    <FontAwesomeIcon icon={showRegPassword ? faEyeSlash : faEye} />
+                  </button>
+                </div>
+
+                <div className='relative w-full'>
+                  <input className='w-full bg-white rounded-2xl p-3 pr-12' type={showRegConfirmPassword ? "text" : "password"} placeholder='Confirm Your Password' />
+                  <button type="button" onClick={() => setShowRegConfirmPassword(!showRegConfirmPassword)} className='absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer'>
+                    <FontAwesomeIcon icon={showRegConfirmPassword ? faEyeSlash : faEye} />
+                  </button>
+                </div>
               
                 </form>
       
@@ -139,10 +163,12 @@ const location = useLocation()
                   
                   
                 </div>
-                 <button className='mt-5 mx-4 lg:ms-20 w-[calc(100%-2rem)] lg:w-auto bg-blue-700 rounded-3xl hover:bg-blue-600 p-4 lg:mb-0 flex justify-center lg:justify-start cursor-pointer text-white text-l font-bold mb-10' >
-              Create Account
-               <span><FontAwesomeIcon icon={faArrowRightLong} style={{color: "rgb(black)",}} /></span>
-              </button>
+               <Link to="/dashboard">
+                   <button className='mt-5 mx-4 lg:ms-20 w-[calc(100%-2rem)] lg:w-auto bg-blue-700 rounded-3xl hover:bg-blue-600 p-4 lg:mb-0 flex justify-center lg:justify-start cursor-pointer text-white text-l font-bold mb-10 gap-2' >
+                Create Account
+                 <span><FontAwesomeIcon icon={faArrowRightLong} style={{color: "rgb(black)",}} /></span>
+                </button>
+               </Link>
               
              
           </div>

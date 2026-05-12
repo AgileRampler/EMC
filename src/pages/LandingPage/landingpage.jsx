@@ -293,9 +293,9 @@ const LandingPage = () => {
               Join thousands of companies that trust EMS to manage their workforce efficiently.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
-              <button className="bg-blue-700 text-white px-6 py-3 rounded-2xl hover:bg-blue-600 cursor-pointer transition-colors duration-200 text-sm sm:text-base">
+              <Link to="/auth" className="bg-blue-700 text-white px-6 py-3 rounded-2xl hover:bg-blue-600 cursor-pointer transition-colors duration-200 text-sm sm:text-base">
                 Get Started Free
-              </button>
+              </Link>
               <button className="border border-blue-700 text-blue-700 px-6 py-3 rounded-2xl hover:bg-gray-100 cursor-pointer transition-colors duration-200 text-sm sm:text-base">
                 Book a Demo
               </button>
