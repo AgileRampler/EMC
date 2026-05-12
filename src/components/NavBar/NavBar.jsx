@@ -67,8 +67,8 @@ const navLinks = [
            
     
                  <div className=' hidden lg:flex gap-6'>
-                    <Link to="auth/" className='bg-white p-3 rounded-2xl text-blue-600 font-bold shadow-mg hover:bg-gray-100  border cursor-pointer'> Login In</Link>
-                    <Link to="aith/" className='bg-blue-700 p-3 rounded-2xl text-white font-bold shadow-mg hover:bg-blue-500  cursor-pointer'>Get Started</Link>
+                    <Link to="auth/" state={{mode:'login'}} className='bg-white p-3 rounded-2xl text-blue-600 font-bold shadow-mg hover:bg-gray-100  border cursor-pointer'> Login In</Link>
+                    <Link to="auth/" state={{mode:'register'}} className='bg-blue-700 p-3 rounded-2xl text-white font-bold shadow-mg hover:bg-blue-500  cursor-pointer'>Get Started</Link>
                  </div>
 
                                     {/* Mobile  */}
@@ -96,8 +96,8 @@ const navLinks = [
 
 
                  <div className='  flex  gap-6'>
-                    <button className='bg-white p-3 rounded-2xl text-blue-600 font-bold cursor-pointer'> Login In</button>
-                    <button className='bg-blue-700 p-3 rounded-2xl text-white font-bold shadow:md cursor-pointer'>Get Started</button>
+                    <Link to="/auth" state={{mode:'login'}}  className='bg-white p-3 rounded-2xl text-blue-600 font-bold cursor-pointer'> Login In</Link>
+                    <Link to="/auth"  state={{mode:'register'}} className='bg-blue-700 p-3 rounded-2xl text-white font-bold shadow:md cursor-pointer'>Get Started</Link>
                  </div>
 
                   </div>
