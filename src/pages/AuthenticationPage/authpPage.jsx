@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { ThreeDot } from 'react-loading-indicators'
 
 import {
   faUsers,
@@ -206,6 +207,9 @@ const AuthPage = () => {
 
   }
 
+ 
+
+
   return (
     <>
 
@@ -402,8 +406,11 @@ const AuthPage = () => {
                   disabled={loading}
                   className='mt-5 bg-blue-700 rounded-3xl hover:bg-blue-600 p-4 flex justify-center items-center cursor-pointer text-white text-lg font-bold gap-2 mb-10 disabled:opacity-60'
                 >
-                  {loading ? "Loading..." : "Login Account"}
+                  {loading  ?  <ThreeDot variant="bounce" color="#ffffff " size="medium" text=""   textColor="" /> : "Login Account"}
                   <FontAwesomeIcon icon={faArrowRightLong} />
+
+
+
                 </button>
 
                      {loginError && (
@@ -529,13 +536,16 @@ const AuthPage = () => {
 
                 {/* BUTTON */}
 
-                <button
+               <button
                   type='submit'
                   disabled={loading}
                   className='mt-5 bg-blue-700 rounded-3xl hover:bg-blue-600 p-4 flex justify-center items-center cursor-pointer text-white text-lg font-bold gap-2 mb-10 disabled:opacity-60'
                 >
-                  {loading ? "Loading..." : "Create Account"}
+                  {loading  ?  <ThreeDot variant="bounce" color="#ffffff " size="medium" text=""   textColor="" /> : "Create Account"}
                   <FontAwesomeIcon icon={faArrowRightLong} />
+
+
+
                 </button>
 
               </form>
@@ -549,7 +559,7 @@ const AuthPage = () => {
             <div
               className={
                 "absolute top-0 h-full w-1/2 hidden lg:flex flex-col justify-center items-center text-center bg-blue-600 p-10 z-20 transition-all duration-700 ease-in-out " +
-                (isLogin ? 'left-1/2 rounded-l-[160px]' : 'left-0 rounded-r-[160px]')
+                (isLogin ? 'left-1/2 rounded-l-[160px]' : 'left-0 rounded-r-[160px] ')
               }
             >
 
