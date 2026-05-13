@@ -183,7 +183,8 @@ const AuthPage = () => {
         "https://emc-server-brc9.onrender.com/api/auth/register",
         {
           email: registerData.email,
-          password: registerData.password
+          password: registerData.password,
+            confirmPassword: registerData.confirmPassword
         }
       )
 
@@ -212,7 +213,7 @@ const AuthPage = () => {
           NAVBAR
       ========================================= */}
 
-      <nav className='font-sans px-5 pt-10 lg:p-10 bg-[#f8f9fc] flex justify-between'>
+      <nav className='font-sans px-4 pt-10 lg:p-10 bg-[#f8f9fc] flex justify-between'>
 
         {/* LEFT */}
 
@@ -269,7 +270,7 @@ const AuthPage = () => {
           AUTH SECTION
       ========================================= */}
 
-      <div className='flex justify-center overflow-hidden px-4 py-10'>
+      <div className='flex justify-center  overflow-hidden px-4 py-10'>
 
         <div className='inline-block relative w-full max-w-6xl bg-[#f8f9fc] rounded-2xl shadow-2xl overflow-hidden'>
 
@@ -383,15 +384,16 @@ const AuthPage = () => {
 
                 {/* LOGIN ERROR */}
 
-                {loginError && (
-                  <div className='text-red-500 font-semibold text-center'>
-                    {loginError}
-                  </div>
-                )}
+               
 
-                <div className='mt-1 font-semibold ms-2 cursor-pointer'>
-                  Forgot Your Password?
-                </div>
+              <div className='flex  gap-10 '> 
+                  <div className='mt-1 font-semibold ms-2 cursor-pointer'>
+                    Forgot Your Password?
+                  </div>
+              
+                  
+                  
+              </div>
 
                 {/* BUTTON */}
 
@@ -403,6 +405,12 @@ const AuthPage = () => {
                   {loading ? "Loading..." : "Login Account"}
                   <FontAwesomeIcon icon={faArrowRightLong} />
                 </button>
+
+                     {loginError && (
+                  <div className='text-red-500 absolute ms-50  mt-5 font-semibold  text-center'>
+                    {loginError}
+                  </div>
+                )}
 
               </form>
 
@@ -514,9 +522,9 @@ const AuthPage = () => {
                 {/* REGISTER ERROR */}
 
                 {registerError && (
-                  <div className='text-red-500 font-semibold text-center'>
+                  <span className='text-red-500 font-semibold absolute mt-20 ms-5 text-center'>
                     {registerError}
-                  </div>
+                  </span>
                 )}
 
                 {/* BUTTON */}
